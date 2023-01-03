@@ -3,15 +3,15 @@ using System.Text;
 using System.Net;
 using System.Net.Http.Headers;
 
-namespace AnosuApi;
+namespace PawalApi;
 
-public class AnosuRestfulApi:IAnosuApi
+public class PawalRestfulApi:IPawalApi
 {
     private IHttpClientFactory clientFactory_;
 
     private string url_;
 
-    public AnosuRestfulApi(IHttpClientFactory clientFactory)
+    public PawalRestfulApi(IHttpClientFactory clientFactory)
     {
         this.clientFactory_ = clientFactory;
         this.url_ = "https://image.anosu.top/pixiv/direct?r18=1";

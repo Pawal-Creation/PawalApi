@@ -1,6 +1,6 @@
-namespace AnosuApi;
+namespace PawalApi;
 
-public interface IAnosuApi
+public interface IPawalApi
 {
     public Task<byte[]> LookupImageAsync(string keyword);
 
