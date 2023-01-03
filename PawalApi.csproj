@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <PackageId>Pawal.Image.Api</PackageId>
     <Version>1.0.0</Version>
-    <Authors>NaturalSelect</Authors>
+    <Authors>Pawal-Creation</Authors>
     <Company>PawalApi</Company>
   </PropertyGroup>
   <ItemGroup>
