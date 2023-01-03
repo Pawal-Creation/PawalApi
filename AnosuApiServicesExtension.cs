@@ -2,13 +2,13 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace PawalApi;
 
-public static class PawalApiServicesExtension
+public static class AnosuApiServicesExtension
 {
-    public static IServiceCollection AddPawalRestfulApi(this IServiceCollection services)
+    public static IServiceCollection AddAnosuApi(this IServiceCollection services)
     {
         if(!services.Any(x => x.ServiceType == typeof(IHttpClientFactory)))
         {
-            services.AddHttpClient(nameof(AnosuRestfulApi));
+            services.AddHttpClient(nameof(IPawalApi));
         }
         services.AddSingleton<IPawalApi,AnosuRestfulApi>();
         return services;
