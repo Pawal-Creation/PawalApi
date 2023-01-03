@@ -10,7 +10,7 @@ public static class AnosuApiServicesExtension
         {
             services.AddHttpClient(nameof(AnosuRestfulApi));
         }
-        services.AddSingleton<AnosuRestfulApi>();
+        services.AddSingleton<IAnosuApi,AnosuRestfulApi>();
         return services;
     }
 }
