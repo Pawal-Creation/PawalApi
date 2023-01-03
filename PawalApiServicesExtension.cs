@@ -8,9 +8,9 @@ public static class PawalApiServicesExtension
     {
         if(!services.Any(x => x.ServiceType == typeof(IHttpClientFactory)))
         {
-            services.AddHttpClient(nameof(PawalRestfulApi));
+            services.AddHttpClient(nameof(AnosuRestfulApi));
         }
-        services.AddSingleton<IPawalApi,PawalRestfulApi>();
+        services.AddSingleton<IPawalApi,AnosuRestfulApi>();
         return services;
     }
 }
