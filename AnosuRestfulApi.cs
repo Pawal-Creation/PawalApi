@@ -5,13 +5,13 @@ using System.Net.Http.Headers;
 
 namespace PawalApi;
 
-public class PawalRestfulApi:IPawalApi
+public class AnosuRestfulApi:IPawalApi
 {
     private IHttpClientFactory clientFactory_;
 
     private string url_;
 
-    public PawalRestfulApi(IHttpClientFactory clientFactory)
+    public AnosuRestfulApi(IHttpClientFactory clientFactory)
     {
         this.clientFactory_ = clientFactory;
         this.url_ = "https://image.anosu.top/pixiv/direct?r18=1";
@@ -27,8 +27,10 @@ public class PawalRestfulApi:IPawalApi
             builder.Append("&keyword=");
             builder.Append(keyword);
         }
+        
         string url = builder.ToString();
         HttpClient client = this.clientFactory_.CreateClient();
+        
         var response = await client.GetAsync(url);
         if(response.StatusCode != HttpStatusCode.OK)
         {
@@ -39,6 +41,7 @@ public class PawalRestfulApi:IPawalApi
         {
             return new byte[0];
         }
+        
         var image = await response.Content.ReadAsByteArrayAsync();
         return image;
     }
